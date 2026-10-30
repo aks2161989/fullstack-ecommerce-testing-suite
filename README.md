@@ -147,5 +147,5 @@ npm run test:e2e:ui
 
 ## 👤 Author & Attribution
 
-- **Test Automation Architecture & 100% Coverage Implementation**: [Akshay Sharma](https://github.com/aks2161989)
+- **Test Automation Architecture & 100% Coverage Implementation**: [Akshay Chavan](https://github.com/aks2161989)
 - **Base Full-Stack E-Commerce Starter Application**: Originally forked from [hacetheworld/ecommerce-store](https://github.com/hacetheworld/ecommerce-store). All automated testing suites, Page Object Models, data-driven test datasets, and accessibility refactoring were engineered independently.

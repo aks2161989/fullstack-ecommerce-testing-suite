@@ -26,13 +26,15 @@ describe("Config Keys Unit Tests (config/keys.js)", () => {
 
   test("should load keys_dev when NODE_ENV is not production", () => {
     process.env.NODE_ENV = "development";
+    delete process.env.MONGO_URI;
+    delete process.env.SECRET_OR_KEY;
 
     let keys;
     jest.isolateModules(() => {
       keys = require("../config/keys");
     });
 
-    expect(keys.mongoURI).toContain("mongodb+srv://ajay:ajay@cluster0-fhjlv.mongodb.net");
-    expect(keys.secretOrKey).toBe("secret_key");
+    expect(keys.mongoURI).toBe("mongodb://127.0.0.1:27017/ecommerce-shop");
+    expect(keys.secretOrKey).toBe("development_secret_key");
   });
 });

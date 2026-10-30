@@ -1,5 +1,5 @@
 module.exports = {
   mongoURI:
-    "mongodb+srv://ajay:ajay@cluster0-fhjlv.mongodb.net/ecommerce-shop?retryWrites=true&w=majority",
-  secretOrKey: "secret_key",
+    process.env.MONGO_URI || "mongodb://127.0.0.1:27017/ecommerce-shop",
+  secretOrKey: process.env.SECRET_OR_KEY || "development_secret_key",
 };

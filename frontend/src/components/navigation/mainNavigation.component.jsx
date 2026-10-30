@@ -6,6 +6,7 @@ import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { connect } from "react-redux";
 import { logoutUser } from "../../redux/user/user.actions";
 import CartIcon from "../cart-icon/cart-icon.component";
+
 class MainNavigation extends Component {
   constructor() {
     super();
@@ -20,7 +21,11 @@ class MainNavigation extends Component {
     const { currentUser } = this.props;
     return (
       <nav className="header">
-        <Link className="header__logo" to="/">
+        <Link
+          className="header__logo"
+          to="/"
+          aria-label="Crown Clothing Home"
+        >
           <Logo />
         </Link>
 
@@ -30,11 +35,6 @@ class MainNavigation extends Component {
               SHOP
             </Link>
           </li>
-          {/* <li className="header__nav--item">
-            <Link className="header__nav--item-link" to="/contact">
-              CONTACT
-            </Link>
-          </li> */}
           {!currentUser ? (
             <li className="header__nav--item">
               <Link className="header__nav--item-link" to="/signin">
@@ -44,13 +44,18 @@ class MainNavigation extends Component {
           ) : (
             <li
               className="header__nav--item"
+              role="button"
+              aria-label="Log Out"
+              tabIndex={0}
               onClick={() => this.props.logoutUser()}
             >
               LOGOUT
             </li>
           )}
 
-          <CartIcon toggleCartHidden={this.toggleCartHidden} />
+          <CartIcon
+            toggleCartHidden={this.toggleCartHidden}
+          />
         </ul>
         {this.state.toggleCart && (
           <CartDropdown toggleCart={this.toggleCartHidden} />

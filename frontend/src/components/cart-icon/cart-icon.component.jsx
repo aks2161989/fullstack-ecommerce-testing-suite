@@ -7,7 +7,13 @@ class CartIcon extends Component {
   render() {
     const { toggleCartHidden, cartItemsCount } = this.props;
     return (
-      <div className="cart-icon" onClick={toggleCartHidden}>
+      <div
+        className="cart-icon"
+        onClick={toggleCartHidden}
+        role="button"
+        aria-label="Shopping Cart"
+        tabIndex={0}
+      >
         <ShoppingIcon className="shopping-icon" />
         <span className="item-count">{cartItemsCount}</span>
       </div>

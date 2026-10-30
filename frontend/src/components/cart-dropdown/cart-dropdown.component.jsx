@@ -5,7 +5,11 @@ import CustomButton from "../custom-button/custom-button.component";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 const CartDropdown = ({ cartItems, history, toggleCart }) => (
-  <div className="cart-dropdown">
+  <div
+    className="cart-dropdown"
+    role="dialog"
+    aria-label="Shopping Cart Dropdown"
+  >
     <div className="cart-items">
       {cartItems && cartItems.length ? (
         cartItems.map((cartItem) => (

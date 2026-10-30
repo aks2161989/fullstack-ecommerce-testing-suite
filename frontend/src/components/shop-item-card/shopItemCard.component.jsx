@@ -3,10 +3,11 @@ import "./shopItemCard.styles.scss";
 import CustomButton from "../custom-button/custom-button.component";
 import { connect } from "react-redux";
 import { addItem } from "../../redux/cart/cart.action";
+
 const ShopItemCard = ({ item, addItem }) => {
   const { name, imageUrl, price } = item;
   return (
-    <div className="collection-item">
+    <article className="collection-item" aria-label={name}>
       <div
         className="image"
         style={{
@@ -21,7 +22,7 @@ const ShopItemCard = ({ item, addItem }) => {
       <CustomButton inverted onClick={() => addItem(item)}>
         Add To Cart
       </CustomButton>
-    </div>
+    </article>
   );
 };
 

@@ -5,6 +5,7 @@ import CustomButton from "../custom-button/custom-button.component";
 import { connect } from "react-redux";
 import { loginUser } from "../../redux/user/user.actions";
 import { withRouter } from "react-router-dom";
+
 class SignIn extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +28,7 @@ class SignIn extends Component {
   };
   render() {
     return (
-      <div className="sign-in">
+      <section className="sign-in" aria-label="Sign In">
         <h2>I already have an account</h2>
         <span>Sign in with your email and password</span>
 
@@ -59,7 +60,7 @@ class SignIn extends Component {
             </CustomButton>
           </div>
         </form>
-      </div>
+      </section>
     );
   }
 }

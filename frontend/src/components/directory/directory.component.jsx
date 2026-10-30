@@ -13,7 +13,7 @@ class Directory extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="dircetory">
+        <div className="dircetory" role="region" aria-label="Directory Categories">
           {this.state.Directory.map((item) => (
             <DirectoryItem key={item.id} item={item} />
           ))}

@@ -1,43 +1,63 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.19.2",
-    "jwt-decode": "^2.2.0",
-    "node-sass": "^4.14.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
-    "redux": "^4.0.5",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
-  },
-  "proxy": "http://localhost:5000",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name":  "frontend",
+    "version":  "0.1.0",
+    "private":  true,
+    "dependencies":  {
+                         "@testing-library/jest-dom":  "^4.2.4",
+                         "@testing-library/react":  "^9.5.0",
+                         "@testing-library/user-event":  "^7.2.1",
+                         "axios":  "^0.19.2",
+                         "jwt-decode":  "^2.2.0",
+                         "react":  "^16.13.1",
+                         "react-dom":  "^16.13.1",
+                         "react-redux":  "^7.2.0",
+                         "react-router-dom":  "^5.2.0",
+                         "react-scripts":  "3.4.1",
+                         "redux":  "^4.0.5",
+                         "redux-logger":  "^3.0.6",
+                         "redux-thunk":  "^2.3.0",
+                         "reselect":  "^4.0.0",
+                         "sass":  "^1.77.6"
+                     },
+    "proxy":  "http://localhost:5000",
+    "scripts":  {
+                    "start":  "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+                    "build":  "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+                    "test":  "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts test",
+                    "test:coverage":  "cross-env CI=true NODE_OPTIONS=--openssl-legacy-provider react-scripts test --watchAll=false --coverage --runInBand",
+                    "test:e2e":  "playwright test",
+                    "test:e2e:headed":  "playwright test --headed",
+                    "test:e2e:ui":  "playwright test --ui",
+                    "eject":  "react-scripts eject"
+                },
+    "eslintConfig":  {
+                         "extends":  "react-app"
+                     },
+    "browserslist":  {
+                         "production":  [
+                                            "\u003e0.2%",
+                                            "not dead",
+                                            "not op_mini all"
+                                        ],
+                         "development":  [
+                                             "last 1 chrome version",
+                                             "last 1 firefox version",
+                                             "last 1 safari version"
+                                         ]
+                     },
+    "devDependencies":  {
+                            "@playwright/test":  "^1.64.1",
+                            "@types/node":  "^26.6.5",
+                            "cross-env":  "^10.1.0",
+                            "typescript":  "^7.0.2"
+                        },
+    "jest":  {
+                 "collectCoverageFrom":  [
+                                             "src/**/*.{js,jsx,ts,tsx}",
+                                             "!src/index.js",
+                                             "!src/serviceWorker.js",
+                                             "!src/setupTests.js",
+                                             "!src/test-utils/**"
+                                         ]
+             }
 }

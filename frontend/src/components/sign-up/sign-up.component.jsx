@@ -4,6 +4,7 @@ import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import { connect } from "react-redux";
 import { registerUser } from "../../redux/user/user.actions";
+
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +39,7 @@ class SignUp extends Component {
   };
   render() {
     return (
-      <div className="sign-up">
+      <section className="sign-up" aria-label="Sign Up">
         <h2 className="title">I Don't have an account</h2>
         <span>Sign Up with your email and password</span>
 
@@ -81,7 +82,7 @@ class SignUp extends Component {
 
           <CustomButton type="submit">SIGN UP</CustomButton>
         </form>
-      </div>
+      </section>
     );
   }
 }
